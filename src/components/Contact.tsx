@@ -1,50 +1,86 @@
-import { Button } from "@/components/ui/button";
+import { FiArrowUpRight } from "react-icons/fi";
+import { Button } from "./ui/button";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import SplitTex from "./SplitText";
 
 export default function Contact() {
-  return (
-    <div
-      className="px-6 pb-10"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-      data-aos-easing="linear"
-      data-aos-delay="300"
-    >
-      <div className="flex flex-col md:flex-row justify-between items-center md:px-20">
-        <div className="hidden md:block">
-          <img
-            src="/layout/mark.png"
-            alt="mark"
-            width={350}
-            height={200}
-            className="object-contain"
-          />
-        </div>
+  const kiteRef = useRef<HTMLImageElement>(null);
+  const kiteRef2 = useRef<HTMLImageElement>(null);
+  const kiteRef3 = useRef<HTMLImageElement>(null);
 
-        <div className="flex flex-col space-y-5 text-center md:text-left">
-          <p className="text-base md:text-lg max-w-full md:max-w-[30rem] leading-relaxed">
-            “Sub-Saharan Africa recorded a 52% increase in on-chain
-            cryptocurrency activity in 2024, outpacing adoption rates in many
-            developed regions. Alongside Latin America’s 63% growth and APAC’s
-            69%, this trend confirms that emerging markets are becoming the
-            heartbeat of global crypto innovation.”
-          </p>
-          <div className="flex justify-center md:justify-start">
-            <a
-              href="https://t.me/capitatokenHQ"
-              target="_blank"
-              rel="noopener noreferrer"
+  useEffect(() => {
+    if (!kiteRef.current || !kiteRef2.current || !kiteRef3.current) return;
+
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 2, yoyo: true });
+    tl.to(kiteRef.current, {
+      rotation: 360,
+      transformOrigin: "center center",
+      duration: 3,
+      ease: "power2.inOut",
+    });
+    const t2 = gsap.timeline({ repeat: -1, repeatDelay: 2, yoyo: true });
+    t2.to(kiteRef2.current, {
+      rotation: 360,
+      transformOrigin: "center center",
+      duration: 3,
+      ease: "power2.inOut",
+    });
+    const t3 = gsap.timeline({ repeat: -1, repeatDelay: 2, yoyo: true });
+    t3.to(kiteRef3.current, {
+      rotation: 360,
+      transformOrigin: "center center",
+      duration: 3,
+      ease: "power2.inOut",
+    });
+  }, []);
+  return (
+    <div className="bg-[#1C243F]">
+      <div className=" flex flex-col gap-12 md:gap-6 md:flex-row items-center justify-between px-5 md:px-8 lg:px-16 pt-8 max-w-[1500px] mx-auto">
+        <div className="space-y-6">
+          <SplitTex className="text-xl md:text-2xl lg:text-4xl font-semibold text-white">
+            Donate with purpose,
+            <br /> invest in causes that <span className="italic">matter.</span>
+          </SplitTex>
+          <SplitTex className="text-sm font-normal text-white max-w-sm">
+            You can watch the world change — or help make it happen. Capita
+            isn't just a token; it's a movement toward financial empowerment and
+            social impact.
+          </SplitTex>
+          <div className="flex flex-col w-full   sm:flex-row gap-4 items-center md:items-start justify-center md:justify-start pt-8">
+            <Button className="px-6  py-4 bg-[#003DEF] shadow-lg hover:bg-[#003DEF]/90 sm:w-fi w-[80%] ">
+              Purchase $CPT
+            </Button>
+            <Button
+              className="px-6 py-4 bg-transparent border border-white shadow-none hover:bg-transparent w-[80%] sm:wfit text-white
+           "
             >
-              <Button
-                style={{
-                  background:
-                    "linear-gradient(180deg, #1F57FB 0%, #003DEF 100%)",
-                }}
-                className="!px-6 !py-5 text-[14px] w-[200px]"
-              >
-                Join our Community
-              </Button>
-            </a>
+              Join the Community <FiArrowUpRight />
+            </Button>
           </div>
+        </div>
+        <div className="flex gap-6 pb-8 md:pb-0 flex-col">
+          <div className="flex items-center gap-3 justify-between">
+            <img
+              ref={kiteRef}
+              src="kite.png"
+              className="size-[80px] sm:size-[100px]"
+            />{" "}
+            <img
+              ref={kiteRef2}
+              src="kite.png"
+              className="size-[80px] sm:size-[100px]"
+            />
+            <img
+              ref={kiteRef3}
+              src="kite.png"
+              className="size-[80px] sm:size-[100px]"
+            />
+          </div>
+          <img
+            src="man.png"
+            className="hidden md:block size-[250px] lg:size-[300px]"
+          />
         </div>
       </div>
     </div>

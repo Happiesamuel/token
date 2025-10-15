@@ -1,15 +1,10 @@
-import { BsHexagon } from "react-icons/bs";
 import { Button } from "@/components/ui/button";
+import SplitTex from "./SplitText";
 
 function Why2() {
   return (
     <div className="py-14 px-5 md:px-8 lg:px-16" id="whitepaper">
-      <div className="flex items-center gap-2 w-fit mx-auto">
-        <BsHexagon className="text-ui-blue text-2xl rotate-90 mt-1" />
-        <p className="uppercase text-ui-blue text-4xl font-bold">Whitepaper</p>
-      </div>
-
-      <div className=" md:flex items-center justify-center gap-24">
+      <div className=" flex flex-col md:flex-row items-center justify-center lg:gap-12">
         <div
           className="w-auto mx-auto md:mx-0 md:max-w-full "
           data-aos="zoom-in"
@@ -17,11 +12,9 @@ function Why2() {
           data-aos-easing="linear"
         >
           <img
-            src="/layout/book.png"
+            src="white.png"
             alt="book"
-            width={500}
-            height={150}
-            className="object-contain max-w-full md:translate-x-[-40px]"
+            className="object-contain object-center scale-[0.9] max-w-full md:translate-x-[-40px]"
           />
         </div>
 
@@ -32,13 +25,27 @@ function Why2() {
           data-aos-easing="linear"
           data-aos-delay="300"
         >
-          <h1 className="font-semibold text-2xl md:text-3xl mx-auto md:mx-0 max-w-[25rem]">
-            Read the Capita Token Whitepaper
-          </h1>
-          <p className="text-[#393939] leading-relaxed max-w-[22rem] mx-auto md:mx-0">
-            If you’d like to know about Capita Token and our vision, check out
-            our detailed Whitepaper.
-          </p>
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-easing="linear"
+            data-aos-delay="300"
+            className="flex items-center gap-1 border w-fit px-5 py-2 border-[#ECECEC] rounded-full"
+          >
+            <img
+              src="logs.png"
+              className=" object-contain object-center size-5"
+              alt="bouncing"
+            />
+            <p className=" text-sm">Whitepaper</p>
+          </div>
+          <SplitTex className="font-semibold text-2xl text-[#003DEF] md:text-3xl mx-auto md:mx-0 max-w-[25rem]">
+            Discover the Blueprint Behind Capita
+          </SplitTex>
+          <SplitTex className="text-[#393939] leading-relaxed max-w-[22rem] mx-auto md:mx-0">
+            Dive into the full details of how Capita Token powers a new era of
+            decentralized philanthropy.
+          </SplitTex>
           <div className="flex justify-center md:justify-start">
             <Button
               style={{

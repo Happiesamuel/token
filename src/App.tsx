@@ -1,6 +1,5 @@
 import About from "./components/About";
 
-import FinanceHub from "./components/PS";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
@@ -12,6 +11,10 @@ import Why2 from "./components/Why2";
 import Why from "./components/Token";
 import { Toaster } from "@/components/ui/toaster";
 import Contact from "./components/Contact";
+import SmoothScrollLayout from "./components/SmoothScroll";
+import { useRef } from "react";
+import MobileNav from "./components/MobileNavbar";
+import Preloader from "./components/Preloader";
 
 function App() {
   return (
@@ -23,35 +26,36 @@ function App() {
 }
 
 function Layout() {
+  const section2Ref = useRef<HTMLDivElement>(null);
   return (
     <div className="font-sora">
-      {/* <CountDown /> */}
-      <div className="min-h-[100%] bg-white ">
-        <Navbar />
-        <div className="flex flex-col lg:flex-row items-center py-10">
-          <Hero />
+      <Preloader />
+      <Navbar section2Ref={section2Ref} />
+      <div className="lg:hidden">
+        <MobileNav />
+      </div>
+      <SmoothScrollLayout>
+        <Hero />
+        <Runtime section2Ref={section2Ref} />
+        <div
+          ref={section2Ref}
+          className="py-14 px-5 md:px-8 lg:px-16"
+          style={{
+            backgroundImage: "url(/bg_hub.png)",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "top",
+          }}
+        >
+          <About />
+          <Why />
         </div>
-      </div>
-      <Runtime />
-      <div
-        className="py-14 px-5 md:px-8 lg:px-16"
-        style={{
-          backgroundImage: "url(/bg_hub.png)",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "top",
-        }}
-      >
-        <About />
-        <FinanceHub />
-        <Why />
-      </div>
-      <Roadmap />
-      <Tokenomics />
-      <Why2 />
-      <Contact />
-      {/* <CountDown2 /> */}
-      <Footer />
+        <Tokenomics />
+        <Roadmap />
+        <Why2 />
+        <Contact />
+        <Footer />
+      </SmoothScrollLayout>
     </div>
   );
 }

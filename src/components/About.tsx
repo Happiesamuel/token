@@ -1,43 +1,104 @@
-import { Button } from "./ui/button";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+import Fields from "./Fields";
+import SplitTex from "./SplitText";
 
+gsap.registerPlugin(ScrollTrigger);
 function About() {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const imgRef2 = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // starts visually squashed vertically
+      gsap.fromTo(
+        imgRef.current,
+        {
+          scaleY: 0.5, // 👈 compressed look
+          scaleX: 1.2, // slightly wider for realism
+          opacity: 0.6,
+          transformOrigin: "center center",
+        },
+        {
+          scaleY: 1, // 👈 normal proportions
+          scaleX: 1,
+          opacity: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: imgRef.current,
+            start: "top 80%", // starts when image enters viewport
+            end: "bottom 40%",
+            scrub: 1.2,
+          },
+        }
+      );
+      gsap.fromTo(
+        imgRef2.current,
+        {
+          scaleY: 0.5, // 👈 compressed look
+          scaleX: 1.2, // slightly wider for realism
+          opacity: 0.6,
+          transformOrigin: "center center",
+        },
+        {
+          scaleY: 1, // 👈 normal proportions
+          scaleX: 1,
+          opacity: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: imgRef2.current,
+            start: "top 80%", // starts when image enters viewport
+            end: "bottom 40%",
+            scrub: 1.2,
+          },
+        }
+      );
+    });
+
+    return () => ctx.revert(); // cleanup on unmount
+  }, []);
   return (
-    <div className="px-5 md:px-8 lg:px-16 pt-8 pb-14 relative " id="about">
-      <div className="flex items-center gap-2 w-fit mx-auto ">
+    <div
+      className="px- md:px-3 lg:px-16 pt-24 pb-14 relative space-y-[50px] md:space-y-[70px] lg:space-y-[150px] max-w-[1500px] mx-auto"
+      id="about"
+    >
+      <div className="max-w-xl mx-auto flex flex-col items-center gap-5">
+        <div className="flex items-center gap-1 border w-fit px-5 py-2 border-[#ECECEC] rounded-full">
+          <img
+            src="logs.png"
+            className=" object-contain object-center size-5"
+            alt="bouncing"
+          />
+          <p className=" text-sm">About us</p>
+        </div>
+        <SplitTex className="text-[#003DEF] font-semibold text-center text-xl md:text-3xl">
+          Empowering the Next Generation of Philanthropists
+        </SplitTex>
+        <SplitTex className="text-center text-sm md:text-base">
+          Highlight urgent causes across Africa and beyond — and earn special
+          grants for making impact visible
+        </SplitTex>
+      </div>
+      <div className="flex  gap-2 justify-center">
         <img
-          src="/layout/section.png"
-          alt="sectionIcon"
-          width={32}
-          height={32}
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-easing="linear"
+          data-aos-delay="300"
+          src="new_1.png"
+          className="  w-[30%] object-contain object-center"
         />
-        <h1 className="text-[#003DEF] font-semibold md:text-2xl text-xl">About us</h1>
+        <img
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-easing="linear"
+          data-aos-delay="300"
+          src="new_2.png"
+          className=" w-[55%] object-contain object-center"
+        />
       </div>
-      <div className="relative text-center max-w-4xl mx-auto flex items-center justify-center flex-col">
-        <p className="md:text-[14px] text-[14px] md:text-xl max-w-[40rem] md:py-10 py-5">
-          Capita Token was created to solve the funding gap for impactful causes
-          in Africa by blending philanthropy with decentralized finance <br />
-          <br />
-          With borderless, transparent crowdfunding powered by blockchain, we’re
-          raising the first 100,000 philanthropists who can give, grow, and
-          generate wealth — while fueling projects that truly matter.
-          <br />
-          <br />
-          Creators who spotlight individuals in dire need across Africa and
-          global markets will also be eligible for Capita grants, amplifying
-          stories that deserve attention and support
-        </p>
-        <a
-          href="https://t.me/capitatokenHQ"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button className="bg-white hover:bg-white/30 cursor-pointer shadow-[0_8px_30px_rgba(0,61,239,0.25)] hover:shadow-[0_8px_40px_rgba(0,61,239,0.35)] transition-shadow md:!px-4 px-3 md:!py-6 py-4">
-            <span className="bg-gradient-to-b from-[#091024] to-[#D0D0D0] bg-clip-text text-transparent font-medium text-xs md:text-sm">
-              Join the Community
-            </span>
-          </Button>
-        </a>
-      </div>
+      <Fields imgRef={imgRef} imgRef2={imgRef2} />
     </div>
   );
 }
