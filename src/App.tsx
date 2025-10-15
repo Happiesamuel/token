@@ -9,18 +9,16 @@ import Runtime from "./components/Runtime";
 import Tokenomics from "./components/Tokenomics";
 import Why2 from "./components/Why2";
 import Why from "./components/Token";
-import { Toaster } from "@/components/ui/toaster";
 import Contact from "./components/Contact";
 import SmoothScrollLayout from "./components/SmoothScroll";
 import { useRef } from "react";
-import MobileNav from "./components/MobileNavbar";
+// import MobileNav from "./components/MobileNavbar";
 import Preloader from "./components/Preloader";
 
 function App() {
   return (
     <div>
       <Layout />
-      <Toaster />
     </div>
   );
 }
@@ -31,9 +29,7 @@ function Layout() {
     <div className="font-sora">
       <Preloader />
       <Navbar section2Ref={section2Ref} />
-      <div className="lg:hidden">
-        <MobileNav />
-      </div>
+      <div className="lg:hidden">{/* <MobileNav /> */}</div>
       <SmoothScrollLayout>
         <Hero />
         <Runtime section2Ref={section2Ref} />
