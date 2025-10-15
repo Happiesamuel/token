@@ -46,7 +46,10 @@ function Why2() {
             Dive into the full details of how Capita Token powers a new era of
             decentralized philanthropy.
           </SplitTex>
-          <div className="flex justify-center md:justify-start">
+          <a
+            href="https://chainfundme-1.gitbook.io/chainfundme/"
+            className="flex justify-center md:justify-start"
+          >
             <Button
               style={{
                 background: "linear-gradient(180deg, #1F57FB 0%, #003DEF 100%)",
@@ -55,7 +58,7 @@ function Why2() {
             >
               Read the Whitepaper
             </Button>
-          </div>
+          </a>
         </div>
       </div>
     </div>
