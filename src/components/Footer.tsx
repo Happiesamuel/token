@@ -1,6 +1,5 @@
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { IoLogoYoutube } from "react-icons/io";
 
 function Footer() {
   const handleNavClick = (
@@ -66,9 +65,7 @@ function Footer() {
           <a href="https://x.com/CapitaToken?t=HTbrOH6Bx0i6CrDDOX81hw&s=09">
             <FaXTwitter />
           </a>
-          <a href="https://youtube.com/@capitashowcase?si=p5uQan73qsWfOjJW">
-            <IoLogoYoutube />
-          </a>
+
           {/* <IoLogoGithub /> */}
         </div>
       </div>

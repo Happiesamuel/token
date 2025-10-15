@@ -94,9 +94,11 @@ export default function Navbar({
             </li>
           ))}
         </ul>
-        <Button className="px-6 py-3 bg-[#003DEF] hover:bg-[#003DEF]/90 text-white font-semibold rounded- w-fit">
-          Purchase $CPT
-        </Button>
+        <a href="#">
+          <Button className="px-6 py-3 bg-[#003DEF] hover:bg-[#003DEF]/90 text-white font-semibold rounded- w-fit">
+            Purchase $CPT
+          </Button>
+        </a>
       </nav>
     </div>
   );

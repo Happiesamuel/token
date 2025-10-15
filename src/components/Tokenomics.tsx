@@ -16,11 +16,11 @@ export default function Tokenomics() {
     },
     {
       percent: 10,
-      text: "Team & Advisors (Vested)",
+      text: "Marketing",
     },
     {
       percent: 15,
-      text: "Team & Advisors (Vested)",
+      text: "Investors (Vested)",
     },
   ];
   return (
@@ -93,12 +93,16 @@ export default function Tokenomics() {
               <br /> Transparency
             </SplitTex>
             <div className="flex flex-col sm:flex-row gap-4 items-center md:items-start justify-center md:justify-start pt-8">
-              <Button className="px-6 py-4 bg-[#003DEF] shadow-lg hover:bg-[#003DEF]/90 w-[80%] sm:w-fit">
-                Purchase $CPT
-              </Button>
-              <Button className="px-6 py-4 bg-transparent border border-white w-[80%] shadow-none hover:bg-transparent sm:w-fit ">
-                Join the Community <FiArrowUpRight />
-              </Button>
+              <a href="#">
+                <Button className="px-6 py-4 bg-[#003DEF] shadow-lg hover:bg-[#003DEF]/90 w-[80%] sm:w-fit">
+                  Purchase $CPT
+                </Button>
+              </a>
+              <a href="https://t.me/capitatoken1">
+                <Button className="px-6 py-4 bg-transparent border border-white w-[80%] shadow-none hover:bg-transparent sm:w-fit ">
+                  Join the Community <FiArrowUpRight />
+                </Button>
+              </a>
             </div>
           </div>
         </div>

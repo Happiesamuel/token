@@ -48,15 +48,17 @@ export default function Contact() {
             social impact.
           </SplitTex>
           <div className="flex flex-col w-full   sm:flex-row gap-4 items-center md:items-start justify-center md:justify-start pt-8">
-            <Button className="px-6  py-4 bg-[#003DEF] shadow-lg hover:bg-[#003DEF]/90 sm:w-fi w-[80%] ">
+           <a href="#"> <Button className="px-6  py-4 bg-[#003DEF] shadow-lg hover:bg-[#003DEF]/90 sm:w-fi w-[80%] ">
               Purchase $CPT
-            </Button>
-            <Button
-              className="px-6 py-4 bg-transparent border border-white shadow-none hover:bg-transparent w-[80%] sm:wfit text-white
-           "
-            >
-              Join the Community <FiArrowUpRight />
-            </Button>
+            </Button></a>
+            <a href="https://t.me/capitatoken1">
+              <Button
+                className="px-6 py-4 bg-transparent border border-white shadow-none hover:bg-transparent w-[80%] sm:w-fit text-white
+              "
+              >
+                Join the Community <FiArrowUpRight />
+              </Button>
+            </a>
           </div>
         </div>
         <div className="flex gap-6 pb-8 md:pb-0 flex-col">

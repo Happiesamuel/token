@@ -53,9 +53,11 @@ function Hero() {
             <Button className="px-6 py-4 bg-[#003DEF] shadow-lg hover:bg-[#003DEF]/90 w-[180px] sm:w-auto">
               Purchase $CPT
             </Button>
-            <Button className="px-6 py-4 bg-transparent shadow-none hover:bg-transparent w-fit text-[#124CF6] ">
-              Learn More <FiArrowUpRight />
-            </Button>
+            <a href="https://t.me/capitatoken1">
+              <Button className="px-6 py-4 bg-transparent shadow-none hover:bg-transparent w-fit text-[#124CF6] ">
+                Join the Community <FiArrowUpRight />
+              </Button>
+            </a>
           </div>
 
           <Bounce

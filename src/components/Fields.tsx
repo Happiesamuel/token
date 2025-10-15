@@ -9,6 +9,7 @@ export default function Fields({
   imgRef: React.RefObject<HTMLImageElement | null>;
   imgRef2: React.RefObject<HTMLImageElement | null>;
 }) {
+  console.log(imgRef, imgRef2);
   return (
     <>
       <div className="flex flex-col md:flex-row gap-12 md:gap-2 items-center">
@@ -49,7 +50,6 @@ export default function Fields({
         </div>
         <div className="w-full hidde  h-[300px flex justify-end">
           <img
-            ref={imgRef}
             src="about_1.png"
             className="w-[80%] h-full object-contain object-center"
           />
@@ -58,10 +58,7 @@ export default function Fields({
 
       <div className="flex flex-col-reverse gap-12 md:gap-2 md:flex-row items-center">
         <div className="w-full lg:w-[70%] h-[300px flex justify-start">
-          <div
-            ref={imgRef2}
-            className="bg-[#76AEE1] w-[80%] md:w-full rounded-r-2xl flex items-center justify-center"
-          >
+          <div className="bg-[#76AEE1] w-[80%] md:w-full rounded-r-2xl flex items-center justify-center">
             <img
               src="about_2.png"
               className="w-[70%] h-full object-contain object-center"
@@ -102,12 +99,16 @@ export default function Fields({
                 </SplitTex>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 items-center md:items-start justify-center md:justify-start pt-8">
-                <Button className="px-6 py-4 bg-[#003DEF] shadow-lg hover:bg-[#003DEF]/90 w-[180px] sm:w-auto">
-                  Purchase $CPT
-                </Button>
-                <Button className="px-6 py-4 bg-transparent shadow-none hover:bg-transparent w-fit text-[#124CF6] ">
-                  Learn More <FiArrowUpRight />
-                </Button>
+                <a href="#">
+                  <Button className="px-6 py-4 bg-[#003DEF] shadow-lg hover:bg-[#003DEF]/90 w-[180px] sm:w-auto">
+                    Purchase $CPT
+                  </Button>
+                </a>
+                <a href="https://t.me/capitatoken1">
+                  <Button className="px-6 py-4 bg-transparent shadow-none hover:bg-transparent w-fit text-[#124CF6] ">
+                    Join the Community <FiArrowUpRight />
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
