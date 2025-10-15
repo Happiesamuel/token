@@ -2,43 +2,23 @@ import { BsHexagon } from "react-icons/bs";
 
 const roapmapData = [
   {
-    date: "Q2/2024",
-    description: "Concept development and Initial planning",
+    date: "2025",
+    description: "Foundation & Ecosystem setup",
   },
   {
-    date: "Q3/2024",
-    description: "Platform architecture and smart contract design",
+    date: "2026",
+    description: "Creator Empowerment & Startup Showcase",
   },
   {
-    date: "Q4/2024",
-    description: "Partnerships and strategic collaborations",
+    date: "2027",
+    description: "Ecosystem Growth & Adoption",
   },
   {
-    date: "Q1/2025",
+    date: "2028",
     description:
-      "Launch of Capita DApps",
+      "Sustainability & Global Impact",
   },
-  {
-    date: "Q2/2025",
-    description:
-      "Users onboarding and reward system activation with Capita(CPT) points",
-  },
-  {
-    date: "Q3/2025",
-    description: "Launch of Capita(CPT) token on BASE blockchain",
-  },
-  {
-    date: "Q4/2025",
-    description: "Capita DApps mobile app development and user integrations",
-  },
-  {
-    date: "Q1/2026",
-    description: "Decentralized governance implementation",
-  },
-  {
-    date: "Q2/2026",
-    description: "Secondary market development",
-  },
+ 
 ];
 
 function Roadmap() {
@@ -58,8 +38,8 @@ function Roadmap() {
         <p className="uppercase text-white text-4xl font-bold">Roadmap</p>
       </div>
 
-      <div className="flex justify-center mt-10">
-        <div className="space-y-10 border-r-[3px] border-gray-500 border-dashed h-fit w-0">
+      <div className="flex justify-center mt-20">
+        <div className="space-y-16 border-r-[3px] border-gray-500 border-dashed h-fit w-0">
           {roapmapData.map((data, index) =>
             (index + 1) % 2 != 0 ? (
               <div
