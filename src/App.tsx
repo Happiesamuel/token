@@ -32,7 +32,7 @@ function Layout() {
       <div className="lg:hidden">
         <MobileNav />
       </div>
-      <SmoothScrollLayout>
+      {/* <SmoothScrollLayout>
         <Hero />
         <Runtime section2Ref={section2Ref} />
         <div
@@ -53,7 +53,7 @@ function Layout() {
         <Why2 />
         <Contact />
         <Footer />
-      </SmoothScrollLayout>
+      </SmoothScrollLayout> */}
     </div>
   );
 }
